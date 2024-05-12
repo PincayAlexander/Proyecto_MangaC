@@ -1,0 +1,36 @@
+{% extends 'web_MangaC/layouts/base.html' %}
+
+
+{% block content %}
+
+<head>
+    <style>
+        .content {
+            height: 60vh;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="content-title">
+            <h1>Bienvenido</h1>
+        </div>
+        <div class="content-Texto">
+            <p>Mangas disponibles</p>
+
+            <ul>
+                {% for manga in mangas %}
+                <li>{{ manga.Nombre }} <br>
+                    Genero:{{manga.Genero.Nombre}} <br>
+                    Autor:{{manga.Autor.Nombre}} {{manga.Autor.Apellido}}
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+{% endblock %}
