@@ -12,6 +12,9 @@ def home (request):
 def login (request):
     return render(request, "web_MangaC/login.html")
 
+def signup(request):
+    return render(request, "web_MangaC/signup.html")
+
 def about (request):
     return render(request, "web_MangaC/about.html")
 

@@ -1,0 +1,37 @@
+{% extends 'web_MangaC/layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'web_MangaC/style/login_signup.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form signup">
+            <h1>Regístrate en "web_MangaC"</h1>
+            <form action="/" method="post">
+                <div class="signup-container">
+                    <label for="Nombre">Nombre: </label>
+                    <input type="text" id="Nombre" class="signup-campo" autocomplete="off" placeholder="Nombre" required />
+                </div>
+                <div class="signup-container">
+                    <label for="Apellido"> Apellido: </label>
+                    <input type="text" id="Apellido" class="signup-campo" autocomplete="off" placeholder="Apellido" required />
+                </div>
+                <div class="signup-container">
+                    <label for="Correo">Correro Electronico: </label>
+                    <input type="email" id="Correo" class="signup-campo" autocomplete="off" placeholder="Correo Electronico" required />
+                </div>
+                <div class="signup-container">
+                    <label for="Contraseña">Contraseña: </label>
+                    <input type="password" id="Contraseña" class="signup-campo" autocomplete=" off" placeholder="Contraseña" required />
+                </div>
+                <input type="submit" value="Crear Cuenta" class="button signup-button" />
+            </form>
+        </div><!-- formulario-->
+    </div>
+
+</body>
+{% endblock %}
