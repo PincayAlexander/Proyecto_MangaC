@@ -19,15 +19,9 @@ from django.urls import path, include
 #from web_MangaC import views
 
 urlpatterns = [
+    path('', include('web_MangaC.urls')),
     path('admin/', admin.site.urls),
-    path('', include('web_MangaC.urls'))
+#    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
-"""
-    path('', views.home, name="home"),
-    path('login/', views.login, name="login"),
-    path('about/', views.about, name="about"),
-    path('contact/', views.contact, name="contact"),
-
-"""
 

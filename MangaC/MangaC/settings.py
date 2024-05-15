@@ -59,7 +59,7 @@ ROOT_URLCONF = 'MangaC.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'web_MangaC', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'web_MangaC/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
