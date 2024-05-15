@@ -25,17 +25,28 @@
                 <li>
                     <a href="{% url 'contact' %}">Contáctanos</a>
                 </li>
+                {% if request.user.is_authenticated %}
+                <li>
+                    <a href="{% url 'lectura' %}">Capitulos</a>
+                </li>
+                {% endif %}
             </ul>
             <div class="logo">
                 <img src="{% static 'web_MangaC/image/logo.ico' %}">
                 <h1>MangaC</h1>
             </div>
             <ul class="navbar-links">
+                {% if request.user.is_authenticated %}
+                <li>
+                    <a href="{% url 'logout' %}"><b>Cerrar Sesión</b></a>
+                </li>
+                {% else %}
                 <li>
                     <a href="{% url 'login' %}">
                         <button class="navbar-links__button"><b>Identificarse</b>
                         </button></a>
                 </li>
+                {% endif %}
             </ul>
         </nav>
     </header>

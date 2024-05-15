@@ -5,7 +5,6 @@
 
 <head>
     <link rel="stylesheet" href="{% static 'web_MangaC/style/login_signup.css' %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -13,18 +12,30 @@
     <div class="container">
         <div class="form signup">
             <h1>Regístrate en "web_MangaC"</h1>
-            <form method="post">
-                {{ form }}
+            <form method="post"><!-- {{ form }} -->
+                <div class="signup-container">
+                    <label for="id_first_name">Nombre: </label>
+                    {{ form.first_name.errors }}
+                    {{ form.first_name }}
+                </div>
+                <div class="signup-container">
+                    <label for="id_last_name"> Apellido: </label>
+                    {{ form.last_name.errors }}
+                    {{ form.last_name }}
+                </div>
+                <div class="signup-container">
+                    <label for="id_email">Correro Electronico: </label>
+                    {{ form.email.errors }}
+                    {{ form.email }}
+                </div>
+                <div class="signup-container">
+                    <label for="id_password">Contraseña: </label>
+                    {{ form.password.errors }}
+                    {{ form.password }}
+                </div>
                 <input type="submit" value="Crear Cuenta" class="button signup-button" />
             </form>
         </div><!-- formulario-->
     </div>
-
-    <script>
-        $(document).ready(function(){
-            $(".signup form div").addClass("signup-container");
-        });
-    </script>
-
 </body>
 {% endblock %}

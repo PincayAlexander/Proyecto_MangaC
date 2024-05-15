@@ -5,16 +5,16 @@
     background-color: #37383d;
     color: #ffffff;
     box-shadow: 0 4px 10px 4px rgba(19, 50, 47, .3);
-    .login {
-        width: 50vh;
-        height: 48vh;
-        margin: 100px auto;
-    }
-    .signup {
-        width: 84vh;
-        height: 90vh;
-        margin: 90px auto;
-    }
+}
+.login {
+    width: 55vh;
+    height: 48vh;
+    margin: 100px auto;
+}
+.signup {
+    width: 84vh;
+    height: 90vh;
+    margin: 90px auto;
 }
 
 .login-urls {
