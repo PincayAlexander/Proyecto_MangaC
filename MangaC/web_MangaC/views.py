@@ -40,10 +40,10 @@ def contact (request):
     return render(request, "web_MangaC/contact.html")
 
 @login_required
-def manga_lect (request):
+def manga_capitulos (request):
     capitulos = tabla_capitulos.objects.all()
     mangas = tabla_manga_comic.objects.all()
-    return render(request,"web_MangaC/lectura.html", {
+    return render(request,"web_MangaC/capitulo.html", {
         'capitulos': capitulos,
         'mangas': mangas, 
     })

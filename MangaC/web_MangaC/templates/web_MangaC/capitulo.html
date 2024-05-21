@@ -1,0 +1,36 @@
+{% extends 'web_MangaC/layouts/base.html' %}
+{% load static %}
+
+{% block headAdd %}
+    <link rel="stylesheet" href="{% static 'web_MangaC/style/capitulos.css' %}">
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container_cap">
+        <H1>Capitulos </H1>
+
+        <ul>
+            {% for manga in mangas %}
+            <li>
+                <h3><b>{{ manga.Nombre }}</b></h3>
+                <ul>
+                    {% for capitulo in capitulos %}
+                    {% if capitulo.Manga_id == manga.ID %}
+                    <li>
+                        {{ capitulo.Num_capitulo }} - {{ capitulo.titulo}}
+                        <!--
+                                <a href="{{ capitulo.pdf.url }}" target="_blank">Ver PDF</a>
+                                <p>No hay PDF disponible para este capítulo.</p>
+                        -->
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    
+    </div>
+</body>
+{% endblock %}

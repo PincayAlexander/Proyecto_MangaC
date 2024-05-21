@@ -1,0 +1,36 @@
+.container_home {
+    min-height: 78vh;
+    padding: 10px;
+}
+
+.container_home-contenido{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    h2{
+        padding: 0 10px;
+        width: 100%;
+    }
+}
+
+.container_home-contenido-card_manga {
+    height: auto;
+    width: 40vh;
+    background-color: rgb(218, 217, 217);
+    border-radius: 5px;
+    img {
+        height: 100px;
+        width: auto;
+    }
+}
+
+.container_home-contenido-card_manga-link {
+    text-decoration: none;
+    color: inherit;
+    margin: 10px;
+    &:hover {
+        transform: scale(1.05);
+    }
+}

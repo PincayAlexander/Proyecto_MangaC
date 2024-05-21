@@ -1,11 +1,23 @@
 {% extends 'web_MangaC/layouts/base.html' %}
+{% load static %}
+
+{% block headAdd %}
+    <link rel="stylesheet" href="{% static 'web_MangaC/style/about.css' %}">
+{% endblock %}
 
 {% block content %}
 <body>
-    <br>
-    <h1>Acerca de</h1>
-    <p>Grupo en Desarrollo</p>
-
-
+    <div class="container_about">
+        <h1>Acerca de</h1>
+        <p>Grupo en Desarrollo</p>
+    
+        <br>
+        <h2>Contactanos</h2>
+        <p>Escriba a nuestro correo: <br>
+            <a href="#">jpincay8421@utm.edu.ec</a><br>
+            <a href="#">jzambrano8531@utm.edu.ec</a><br>
+            <a href="#">nzambrano8605@utm.edu.ec</a>
+        </p>
+    </div>
 </body>
 {% endblock %}

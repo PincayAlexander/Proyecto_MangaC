@@ -8,7 +8,8 @@
     <!-- Icono y Nombre -->
     <link rel="icon" href="{% static 'web_MangaC/image/logo.ico' %}">
     <title>MangaC</title>
-    <link rel="stylesheet" href="{% static 'web_MangaC/style/main.css' %}">
+    <link rel="stylesheet" href="{% static 'web_MangaC/style/base.css' %}">
+    {% block headAdd %}{% endblock %}
 </head>
 
 <body>
@@ -22,14 +23,13 @@
                 <li>
                     <a href="{% url 'about' %}">Acerca de</a>
                 </li>
-                <li>
-                    <a href="{% url 'contact' %}">Contáctanos</a>
-                </li>
+            <!--
                 {% if request.user.is_authenticated %}
                 <li>
-                    <a href="{% url 'lectura' %}">Capitulos</a>
+                    <a href="{% url 'capitulos' %}">Capitulos</a>
                 </li>
                 {% endif %}
+            -->
             </ul>
             <div class="logo">
                 <img src="{% static 'web_MangaC/image/logo.ico' %}">
@@ -52,6 +52,7 @@
     </header>
     <!-- Contenido de la página -->
     {% block content %}{% endblock %}
+
     <footer class="footer">
         <p>© 2024 Dark_Knigth. All rights reserved</p>
     </footer>

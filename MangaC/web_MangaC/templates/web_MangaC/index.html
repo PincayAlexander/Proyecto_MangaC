@@ -1,30 +1,35 @@
 {% extends 'web_MangaC/layouts/base.html' %}
+{% load static %}
 
+{% block headAdd %}
+    <link rel="stylesheet" href="{% static 'web_MangaC/style/home.css' %}">
+{% endblock %}
 
 {% block content %}
 
 <body>
-    <div class="container">
-        <div class="container-title">
+    <div class="container_home">
+        <div class="container_home-title">
             <h1>Bienvenido</h1>
         </div>
-        <div class="container-Texto">
-            <p>Mangas disponibles</p>
-
-            <ul>
-                {% for manga in mangas %}
-                <li>{{ manga.Nombre }} <br>
-                    Genero: 
-                    {% if manga.Genero.exists %}
-                        {{ manga.Genero.all.first.Nombre }}
-                    {% else %}
-                        Sin género
-                    {% endif %}<br>
-                    Autor: {{ manga.Autor.Nombre }} {{ manga.Autor.Apellido }}
-                </li>
-                {% endfor %}
-            </ul>
-
+        <div class="container_home-contenido">
+            <h2>Mangas disponibles</h2>
+            {% for manga in mangas %}
+            <a href="{% url 'capitulos' %}" class="container_home-contenido-card_manga-link">
+                <div class="container_home-contenido-card_manga">
+                    <h3>{{ manga.Nombre }}</h3>
+                    <img src="{{ manga.Portada.url }}" alt="Portada de {{ manga.Nombre }}"><br>
+                    <p>Genero: 
+                        {% if manga.Genero.exists %}
+                            {{ manga.Genero.all.first.Nombre }}
+                        {% else %}
+                            Sin género
+                        {% endif %}
+                    </p>
+                    <p>Autor: {{ manga.Autor.Nombre }} {{ manga.Autor.Apellido }}</p>
+                </div>
+            </a>
+            {% endfor %}
         </div>
     </div>
 </body>

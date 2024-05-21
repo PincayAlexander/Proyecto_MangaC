@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import tabla_autores, tabla_generos, tabla_manga_comic, tabla_capitulos, tabla_historial_lectura
+from .models import *
 
 # Register your models here.
 admin.site.register(tabla_autores)

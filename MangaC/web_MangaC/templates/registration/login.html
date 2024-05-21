@@ -1,12 +1,11 @@
 {% extends 'web_MangaC/layouts/base.html' %}
 {% load static %}
 
-{% block content %}
-
-<head>
+{% block headAdd %}
   <link rel="stylesheet" href="{% static 'web_MangaC/style/login_signup.css' %}">
-</head>
+{% endblock %}
 
+{% block content %}
 <body>
   <div class="container">
     <div class="form login">
