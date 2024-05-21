@@ -14,8 +14,13 @@
             <ul>
                 {% for manga in mangas %}
                 <li>{{ manga.Nombre }} <br>
-                    Genero:{{manga.Genero.Nombre}} <br>
-                    Autor:{{manga.Autor.Nombre}} {{manga.Autor.Apellido}}
+                    Genero: 
+                    {% if manga.Genero.exists %}
+                        {{ manga.Genero.all.first.Nombre }}
+                    {% else %}
+                        Sin género
+                    {% endif %}<br>
+                    Autor: {{ manga.Autor.Nombre }} {{ manga.Autor.Apellido }}
                 </li>
                 {% endfor %}
             </ul>

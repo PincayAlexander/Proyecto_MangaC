@@ -42,10 +42,8 @@ def contact (request):
 @login_required
 def manga_lect (request):
     capitulos = tabla_capitulos.objects.all()
-    contenidos = tabla_contenido.objects.all()
     mangas = tabla_manga_comic.objects.all()
     return render(request,"web_MangaC/lectura.html", {
         'capitulos': capitulos,
-        'contenidos': contenidos,
         'mangas': mangas, 
     })

@@ -15,15 +15,10 @@
                 {% if capitulo.Manga_id == manga.ID %}
                 <li>
                     {{ capitulo.Num_capitulo }} - {{ capitulo.titulo}}
-                    {% for contenido in contenidos %}
-                    {% if capitulo.id == contenido.capitulo_id %}
-                        {% if contenido.pdf %}
+                    <!--
                             <a href="{{ capitulo.pdf.url }}" target="_blank">Ver PDF</a>
-                        {% else %}
                             <p>No hay PDF disponible para este capítulo.</p>
-                        {% endif %}
-                    {% endif %}
-                    {% endfor %}
+                    -->
                 </li>
                 {% endif %}
                 {% endfor %}
