@@ -8,6 +8,9 @@
     <!-- Icono y Nombre -->
     <link rel="icon" href="{% static 'web_MangaC/image/logo.ico' %}">
     <title>MangaC</title>
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/0fb473f9ca.js" crossorigin="anonymous"></script>
+    <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="{% static 'web_MangaC/style/base.css' %}">
     {% block headAdd %}{% endblock %}
 </head>
@@ -17,13 +20,11 @@
     <header>
         <nav class="navbar">
             <ul class="navbar-links">
-                <li>
-                    <a href="{% url 'home' %}">INICIO</b></a>
-                </li>
-                <li>
-                    <a href="{% url 'about' %}">Acerca de</a>
-                </li>
-            <!--
+                <li class="navbar-links__item"><a href="{% url 'home' %}">
+                    <i class="fa-solid fa-house"></i><p>Inicio</p></a></li>
+                <li class="navbar-links__item"><a href="{% url 'about' %}">
+                    <i class="fa-solid fa-circle-info"></i><p>Acerca de</p></a></li>
+                <!--
                 {% if request.user.is_authenticated %}
                 <li>
                     <a href="{% url 'capitulos' %}">Capitulos</a>
@@ -31,20 +32,17 @@
                 {% endif %}
             -->
             </ul>
-            <div class="logo">
-                <img src="{% static 'web_MangaC/image/logo.ico' %}">
+            <div class="navbar-logo">
+                <img src="{% static 'web_MangaC/image/logo.ico' %}" alt="logo">
                 <h1>MangaC</h1>
             </div>
             <ul class="navbar-links">
                 {% if request.user.is_authenticated %}
-                <li>
-                    <a href="{% url 'logout' %}"><b>Cerrar Sesión</b></a>
-                </li>
+                <li class="navbar-links__item"><a href="{% url 'logout' %}">
+                    <i class="fa-solid fa-right-from-bracket"></i><p>Cerrar Sesión</p></a></li>
                 {% else %}
                 <li>
-                    <a href="{% url 'login' %}">
-                        <button class="navbar-links__button"><b>Identificarse</b>
-                        </button></a>
+                    <a class="navbar-links__button" href="{% url 'login' %}"><i class="fa-solid fa-user"></i><p>Identificarse</p></a>
                 </li>
                 {% endif %}
             </ul>

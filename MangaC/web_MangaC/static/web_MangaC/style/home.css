@@ -1,36 +1,32 @@
-.container_home {
+.home {
     min-height: 78vh;
-    padding: 10px;
+    max-width: 100%;
+    padding: 1.5rem;
 }
 
-.container_home-contenido{
+.home-title {
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.home-subtitle{
+    margin: 0 1rem;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(53, 53, 53); 
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
-    h2{
-        padding: 0 10px;
-        width: 100%;
-    }
+    align-items: center;
 }
 
-.container_home-contenido-card_manga {
-    height: auto;
-    width: 40vh;
-    background-color: rgb(218, 217, 217);
-    border-radius: 5px;
-    img {
-        height: 100px;
-        width: auto;
-    }
-}
-
-.container_home-contenido-card_manga-link {
-    text-decoration: none;
-    color: inherit;
-    margin: 10px;
-    &:hover {
-        transform: scale(1.05);
-    }
+.home-subtitle::before,
+.home-subtitle::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #828282;
+    margin: 0 1rem;
 }

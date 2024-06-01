@@ -9,7 +9,7 @@ from django.contrib.auth import logout
 
 # Create your views here.
 def home (request):
-    mangas = tabla_manga_comic.objects.all()
+    mangas = tabla_mangas.objects.all()
     return render(request, "web_MangaC/index.html", {
         'mangas': mangas,
     })
@@ -42,7 +42,7 @@ def contact (request):
 @login_required
 def manga_capitulos (request):
     capitulos = tabla_capitulos.objects.all()
-    mangas = tabla_manga_comic.objects.all()
+    mangas = tabla_mangas.objects.all()
     return render(request,"web_MangaC/capitulo.html", {
         'capitulos': capitulos,
         'mangas': mangas, 

@@ -27,30 +27,26 @@ class tabla_generos(models.Model):
 
 
 #Tabla "manga_comic"
-class tabla_manga_comic(models.Model):
+class tabla_mangas(models.Model):
     OPCIONES_ESTADO = [
         ('Emision', 'Emisión'),
         ('Pausa', 'Pausa'),
         ('Finalizado', 'Finalizado'),
     ]
     Nombre = models.CharField(max_length=100)
-    Genero = models.ManyToManyField(tabla_generos)
+    GeneroPrincipal = models.ForeignKey(tabla_generos, on_delete=models.CASCADE, null=True)
+    Subgenero = models.ManyToManyField(tabla_generos, blank=True, related_name='sub_mangas_set')
     Autor = models.ForeignKey(tabla_autores, on_delete=models.CASCADE, null=True)
     Fech_publicacion = models.DateField(auto_now_add=True, verbose_name='Fecha de Publicación')
-    Estado = models.CharField(
-        max_length=10,
-        choices=OPCIONES_ESTADO,
-        blank=True,
-    )
+    Estado = models.CharField(max_length=10, choices=OPCIONES_ESTADO)
     Portada = models.ImageField(upload_to='portadas/', null=True)
     Descripcion = models.TextField(null=True)
     class Meta:
         verbose_name = 'Manga/Comic'
         verbose_name_plural = 'Manga/Comic'
     def __str__(self):
-        genero_principal = self.Genero.first().Nombre if self.Genero.exists() else 'Sin género'
         autor = f"{self.Autor.Nombre}, {self.Autor.Apellido}"
-        return f"{self.Nombre} - {genero_principal} - {autor}"
+        return f"{self.Nombre} - {self.GeneroPrincipal} - {autor}"
 
 
 #Construir la ruta para los capitulos
@@ -59,12 +55,12 @@ def obtener_ruta_subida(instance, filename):
     return os.path.join('capitulos', ruta, filename)
 #Tabla "capitulos"
 class tabla_capitulos(models.Model):
-    Manga = models.ForeignKey(tabla_manga_comic, on_delete=models.CASCADE)
+    Manga = models.ForeignKey(tabla_mangas, on_delete=models.CASCADE)
     capitulo = models.FileField(upload_to=obtener_ruta_subida, null=True)
     Num_capitulo = models.PositiveSmallIntegerField(verbose_name='Número de Capitulo')
     Titulo = models.CharField(max_length=100, null=True, blank=True)
     Detalle = models.CharField(max_length=20, null=True)
-    Fech_publicacion = models.DateField(auto_now=True, verbose_name='Fecha de Publicación')
+    Fech_upload = models.DateField(auto_now=True, verbose_name='Fecha de Publicación')
     class Meta:
         verbose_name = 'Capítulo'
         verbose_name_plural = 'Capítulos'

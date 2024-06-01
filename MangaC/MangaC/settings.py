@@ -26,11 +26,7 @@ SECRET_KEY = 'django-insecure-jjz(dqg0p$nw$)wcj7xuih1=d40py%r7-#92696rs^s%%yi*wu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-if DEBUG:
-    ALLOWED_HOSTS = []
-else:
-    #ALLOWED_HOSTS = ['www.mangaCWorld.com', 'mangaCWorld.com']
-    ALLOWED_HOSTS = ['AlexPincay.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['AlexPincay.pythonanywhere.com', 'localhost', '127.0.0.1']
 
 # Application definition
 

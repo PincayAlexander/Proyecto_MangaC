@@ -2,36 +2,34 @@
 {% load static %}
 
 {% block headAdd %}
-    <link rel="stylesheet" href="{% static 'web_MangaC/style/home.css' %}">
+<link rel="stylesheet" href="{% static 'web_MangaC/style/home.css' %}">
+<link rel="stylesheet" href="{% static 'web_MangaC/style/card.css' %}">
 {% endblock %}
 
 {% block content %}
-
-<body>
-    <div class="container_home">
-        <div class="container_home-title">
-            <h1>Bienvenido</h1>
-        </div>
-        <div class="container_home-contenido">
-            <h2>Mangas disponibles</h2>
+<div class="home">
+    <h1 class="home-title">Bienvenido 🐉</h1><br>
+    <section>
+        <h2 class="home-subtitle">Mangas disponibles </h2>
+        <div class="card-container">
             {% for manga in mangas %}
-            <a href="{% url 'capitulos' %}" class="container_home-contenido-card_manga-link">
-                <div class="container_home-contenido-card_manga">
-                    <h3>{{ manga.Nombre }}</h3>
-                    <img src="{{ manga.Portada.url }}" alt="Portada de {{ manga.Nombre }}"><br>
-                    <p>Genero: 
-                        {% if manga.Genero.exists %}
-                            {{ manga.Genero.all.first.Nombre }}
-                        {% else %}
-                            Sin género
-                        {% endif %}
-                    </p>
-                    <p>Autor: {{ manga.Autor.Nombre }} {{ manga.Autor.Apellido }}</p>
+            <a href="{% url 'capitulos' %}" class="card-link">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">{{ manga.Nombre }}</h3>
+                        <img src="{{ manga.Portada.url }}" alt="Portada de {{ manga.Nombre }}" class="card-image">
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text"><b>Genero:</b> {{ manga.GeneroPrincipal.Nombre }}</p>
+                        <p class="card-text"><b>Autor:</b> {{ manga.Autor.Nombre }} {{ manga.Autor.Apellido }}</p>
+                    </div>
                 </div>
             </a>
             {% endfor %}
         </div>
-    </div>
-</body>
+    
+    </section>
+</div>
+
 
 {% endblock %}
