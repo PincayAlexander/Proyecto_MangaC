@@ -1,49 +1,44 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 from .models import *
 from .forms import *
-from django.shortcuts import redirect
-#from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout
 
-# Create your views here.
-def home (request):
+
+# Página principal
+def home_view (request):
     mangas = tabla_mangas.objects.all()
     return render(request, "web_MangaC/index.html", {
         'mangas': mangas,
     })
-"""
-def login (request):
-    return render(request, "web_MangaC/registration/login.html", {
-        'form': login_form()
-    })
-"""
-class CustomLoginView(LoginView):
-    form = login_form
 
+# Inicio de sesión
+class CustomLoginView(LoginView):
+    template_name = "registration/login.html"
+    form_class = login_form
+
+# Cerrar sesión
 def logout_view(request):
-    if request.method == 'POST':
-        logout(request)
-        return redirect('/home')
+    logout(request)
     return redirect('/home')
 
-def signup (request):
-    return render(request, "web_MangaC/signup.html", {
+# Registro de usuarios
+def signup_view (request):
+    return render(request, "registration/signup.html", {
         'form': signup_form()
     })
 
-def about (request):
+# Acerca de"
+def about_view (request):
     return render(request, "web_MangaC/about.html")
 
-def contact (request):
-    return render(request, "web_MangaC/contact.html")
-
+# Capítulos de manga
 @login_required
-def manga_capitulos (request):
+def manga_capitulos_view (request):
     capitulos = tabla_capitulos.objects.all()
     mangas = tabla_mangas.objects.all()
-    return render(request,"web_MangaC/capitulo.html", {
+    return render(request,"web_MangaC/Chapter.html", {
         'capitulos': capitulos,
         'mangas': mangas, 
     })

@@ -24,13 +24,6 @@
                     <i class="fa-solid fa-house"></i><p>Inicio</p></a></li>
                 <li class="navbar-links__item"><a href="{% url 'about' %}">
                     <i class="fa-solid fa-circle-info"></i><p>Acerca de</p></a></li>
-                <!--
-                {% if request.user.is_authenticated %}
-                <li>
-                    <a href="{% url 'capitulos' %}">Capitulos</a>
-                </li>
-                {% endif %}
-            -->
             </ul>
             <div class="navbar-logo">
                 <img src="{% static 'web_MangaC/image/logo.ico' %}" alt="logo">
@@ -38,11 +31,15 @@
             </div>
             <ul class="navbar-links">
                 {% if request.user.is_authenticated %}
-                <li class="navbar-links__item"><a href="{% url 'logout' %}">
-                    <i class="fa-solid fa-right-from-bracket"></i><p>Cerrar Sesión</p></a></li>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="navbar-links__logout-button">
+                        <i class="fa-solid fa-right-from-bracket"></i><p>Cerrar Sesión</p>
+                    </button>
+                </form>
                 {% else %}
                 <li>
-                    <a class="navbar-links__button" href="{% url 'login' %}"><i class="fa-solid fa-user"></i><p>Identificarse</p></a>
+                    <a class="navbar-links__login-button" href="{% url 'login' %}"><i class="fa-solid fa-user"></i><p>Identificarse</p></a>
                 </li>
                 {% endif %}
             </ul>

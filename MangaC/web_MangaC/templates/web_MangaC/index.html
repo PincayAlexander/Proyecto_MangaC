@@ -13,7 +13,7 @@
         <h2 class="home-subtitle">Mangas disponibles </h2>
         <div class="card-container">
             {% for manga in mangas %}
-            <a href="{% url 'capitulos' %}" class="card-link">
+            <a href="{% url 'chapter' %}" class="card-link">
                 <div class="card">
                     <div class="card-content">
                         <h3 class="card-title">{{ manga.Nombre }}</h3>
@@ -30,6 +30,4 @@
     
     </section>
 </div>
-
-
 {% endblock %}

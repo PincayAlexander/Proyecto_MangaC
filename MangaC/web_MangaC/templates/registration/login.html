@@ -2,26 +2,29 @@
 {% load static %}
 
 {% block headAdd %}
-  <link rel="stylesheet" href="{% static 'web_MangaC/style/login_signup.css' %}">
+<link rel="stylesheet" href="{% static 'web_MangaC/style/login_signup.css' %}">
 {% endblock %}
 
 {% block content %}
-<body>
-  <div class="container">
-    <div class="form login">
-      <h1>Iniciar Sesión</h1>
-      <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <div class="login-urls">
-          <a href="#">¿Olvidaste tu contraseña? </a>
-          <a href="{% url 'signup' %}"> Crear cuenta Nueva</a>
-        </div>
-        <input type="submit" value="Acceder" class="button login-button" />
-      </form>
-    </div>
-  </div><!-- formulario-->
+<div class="container">
+  <div class="form login">
+    <h1>Iniciar Sesión</h1>
+    <form action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="username" placeholder="Usuario", maxlength="150" required id="id_username" class="login-campo">
+      <input type="password" name="password" placeholder="Contraseña", required id="id_password" class="login-campo">
+      {% if form.errors %}
+        <p style="color:rgb(199, 31, 31)">
+          Su nombre de usuario o contraseña son incorrectas. 
+          Por favor, inténtelo de nuevo.</p>
+      {% endif %}
+      <div class="login-urls">
+        <a href="#">¿Olvidaste tu contraseña? </a>
+        <a href="{% url 'signup' %}"> Crear cuenta Nueva</a>
+      </div>
+      <input type="submit" value="Acceder" class="login-button" />
+    </form>
   </div>
-
-</body>
+</div><!-- formulario-->
+</div>
 {% endblock %}

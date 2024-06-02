@@ -2,22 +2,28 @@
 {% load static %}
 
 {% block headAdd %}
-    <link rel="stylesheet" href="{% static 'web_MangaC/style/about.css' %}">
+<link rel="stylesheet" href="{% static 'web_MangaC/style/about.css' %}">
 {% endblock %}
 
 {% block content %}
+
 <body>
     <div class="container_about">
-        <h1>Acerca de</h1>
-        <p>Grupo en Desarrollo</p>
-    
+        <div class="about-info">
+            <h1 class="about-info__title">Acerca de</h1>
+            <p>Grupo en Desarrollo</p>
+        </div>
         <br>
-        <h2>Contactanos</h2>
-        <p>Escriba a nuestro correo: <br>
-            <a href="#">jpincay8421@utm.edu.ec</a><br>
-            <a href="#">jzambrano8531@utm.edu.ec</a><br>
-            <a href="#">nzambrano8605@utm.edu.ec</a>
-        </p>
+        <div class="about-contact">
+            <h2 class="about-info__subtitle">Contactanos</h2>
+            <p>Escriba a nuestro correo:</p>
+            <ul>
+                <li><a href="#">jpincay8421@utm.edu.ec</a></li>
+                <li><a href="#">jzambrano8531@utm.edu.ec</a></li>
+                <li><a href="#">nzambrano8605@utm.edu.ec</a></li>
+            </ul>
+        </div>
+
     </div>
 </body>
 {% endblock %}

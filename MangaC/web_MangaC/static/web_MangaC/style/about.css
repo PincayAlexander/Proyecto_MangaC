@@ -1,4 +1,24 @@
 .container_about {
     min-height: 78vh;
-    padding: 10px;
+    max-width: 100%;
+    padding: 1.5rem;
+}
+
+.about-info__title {
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    margin: 10px 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.about-info__subtitle{
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(61, 61, 61); 
 }

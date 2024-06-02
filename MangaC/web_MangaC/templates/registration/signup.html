@@ -12,16 +12,16 @@
     <div class="container">
         <div class="form signup">
             <h1>Regístrate en "web_MangaC"</h1>
-            <form method="post"><!-- {{ form }} -->
+            <form method="post">
                 <div class="signup-container">
                     <label for="id_first_name">Nombre: </label>
                     {{ form.first_name.errors }}
-                    {{ form.first_name }}
+                    {{ form.first_name.as_widget }}
                 </div>
                 <div class="signup-container">
                     <label for="id_last_name"> Apellido: </label>
                     {{ form.last_name.errors }}
-                    {{ form.last_name }}
+                    {{ form.last_name.as_widget }}
                 </div>
                 <div class="signup-container">
                     <label for="id_email">Correro Electronico: </label>
