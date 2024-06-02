@@ -8,15 +8,16 @@
 {% block content %}
 <div class="container">
   <div class="form login">
-    <h1>Iniciar Sesión</h1>
+    <h1 class="form-title">Iniciar Sesión</h1>
     <form action="{% url 'login' %}" method="post">
       {% csrf_token %}
       <input type="text" name="username" placeholder="Usuario", maxlength="150" required id="id_username" class="login-campo">
       <input type="password" name="password" placeholder="Contraseña", required id="id_password" class="login-campo">
       {% if form.errors %}
-        <p style="color:rgb(199, 31, 31)">
-          Su nombre de usuario o contraseña son incorrectas. 
-          Por favor, inténtelo de nuevo.</p>
+        <div class="login-error">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <b>Error:</b> Usuario o contraseña incorrecto. <br>
+            Por favor, inténtelo de nuevo.</div>
       {% endif %}
       <div class="login-urls">
         <a href="#">¿Olvidaste tu contraseña? </a>

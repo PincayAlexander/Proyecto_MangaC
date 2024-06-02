@@ -13,12 +13,12 @@
         <ul>
             {% for manga in mangas %}
             <li>
-                <h3><b>{{ manga.Nombre }}</b></h3>
+                <h3><b>{{ manga.nombre }}</b></h3>
                 <ul>
                     {% for capitulo in capitulos %}
-                    {% if capitulo.Manga_id == manga.ID %}
+                    {% if capitulo.manga == manga.id_manga %}
                     <li>
-                        {{ capitulo.Num_capitulo }} - {{ capitulo.titulo}}
+                        {{ capitulo.num_capitulo }} - {{ capitulo.titulo}}
                         <!--
                                 <a href="{{ capitulo.pdf.url }}" target="_blank">Ver PDF</a>
                                 <p>No hay PDF disponible para este capítulo.</p>

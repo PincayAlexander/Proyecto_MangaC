@@ -16,12 +16,12 @@
             <a href="{% url 'chapter' %}" class="card-link">
                 <div class="card">
                     <div class="card-content">
-                        <h3 class="card-title">{{ manga.Nombre }}</h3>
-                        <img src="{{ manga.Portada.url }}" alt="Portada de {{ manga.Nombre }}" class="card-image">
+                        <h3 class="card-title">{{ manga.nombre }}</h3>
+                        <img src="{{ manga.portada.url }}" alt="Portada de {{ manga.nombre }}" class="card-image">
                     </div>
                     <div class="card-footer">
-                        <p class="card-text"><b>Genero:</b> {{ manga.GeneroPrincipal.Nombre }}</p>
-                        <p class="card-text"><b>Autor:</b> {{ manga.Autor.Nombre }} {{ manga.Autor.Apellido }}</p>
+                        <p class="card-text"><b>Genero:</b> {{ manga.genero_principal.nombre }}</p>
+                        <p class="card-text"><b>Autor:</b> {{ manga.autor.nombre }} {{ manga.autor.apellido }}</p>
                     </div>
                 </div>
             </a>
