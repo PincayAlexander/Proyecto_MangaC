@@ -26,7 +26,12 @@ SECRET_KEY = 'django-insecure-jjz(dqg0p$nw$)wcj7xuih1=d40py%r7-#92696rs^s%%yi*wu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['AlexPincay.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1', # Local
+    '143.198.231.154', # DigitalOcean
+    'AlexPincay.pythonanywhere.com' # Python AnyWhere
+]  
 
 # Application definition
 
@@ -74,26 +79,42 @@ WSGI_APPLICATION = 'MangaC.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-
+# Database Postgres local
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "db_MangaC",
-        "USER": "postgres",
-        "PASSWORD": "Password123.",
-        "HOST": "localhost",
-        "PORT": "5432",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_MangaC',
+        'USER': 'postgres',
+        'PASSWORD': 'Password123.',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+# Database MySQL of pythonAnywhere
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'AlexPincay$MangaC',
+        'USER': 'AlexPincay',
+        'PASSWORD': 'passWord.123#',
+        'HOST': 'AlexPincay.mysql.pythonanywhere-services.com',
+        'PORT': '3306',
     }
 }
 """
+
+# Database Postgres of DigitalOcean
+"""
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "AlexPincay$MangaC",
-        "USER": "AlexPincay",
-        "PASSWORD": "passWord.123#",
-        "HOST": "AlexPincay.mysql.pythonanywhere-services.com",
-        "PORT": "3306",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'db_mangac',
+        'USER': 'alex',
+        'PASSWORD': 'jAlex-0811',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 """
@@ -138,15 +159,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #     os.path.join(BASE_DIR, 'staticfiles'),
 # ] 
 
+# urls para archivos media de base de datos
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#urls para archivos media de base de datos
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#Variables de redireccionamiento de login y logout
+# Variables de redireccionamiento de login y logout
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
