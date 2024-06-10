@@ -38,7 +38,7 @@ def about_view (request):
 def manga_capitulos_view (request):
     capitulos = tabla_capitulos.objects.all()
     mangas = tabla_mangas.objects.all()
-    return render(request,"web_MangaC/Chapter.html", {
+    return render(request,"web_MangaC/chapter.html", {
         'capitulos': capitulos,
         'mangas': mangas, 
     })
