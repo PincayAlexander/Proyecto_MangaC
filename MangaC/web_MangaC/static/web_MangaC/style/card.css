@@ -70,7 +70,7 @@
     margin: 10px;
     &:hover {
         transform: scale(1.05);
-        .card-image {
+        .card__image {
             filter: contrast(100%);
           }
     }
