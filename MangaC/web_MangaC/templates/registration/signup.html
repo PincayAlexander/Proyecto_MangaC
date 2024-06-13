@@ -11,29 +11,29 @@
 
     <div class="container">
         <div class="form signup">
-            <h1>Regístrate en "web_MangaC"</h1>
+            <h1 class="form__title">Regístrate en "web_MangaC"</h1>
             <form method="post">
-                <div class="signup-container">
+                <div class="signup__container">
                     <label for="id_first_name">Nombre: </label>
                     {{ form.first_name.errors }}
                     {{ form.first_name.as_widget }}
                 </div>
-                <div class="signup-container">
+                <div class="signup__container">
                     <label for="id_last_name"> Apellido: </label>
                     {{ form.last_name.errors }}
                     {{ form.last_name.as_widget }}
                 </div>
-                <div class="signup-container">
+                <div class="signup__container">
                     <label for="id_email">Correro Electronico: </label>
                     {{ form.email.errors }}
                     {{ form.email }}
                 </div>
-                <div class="signup-container">
+                <div class="signup__container">
                     <label for="id_password">Contraseña: </label>
                     {{ form.password.errors }}
                     {{ form.password }}
                 </div>
-                <input type="submit" value="Crear Cuenta" class="button signup-button" />
+                <input type="submit" value="Crear Cuenta" class="signup__button" />
             </form>
         </div><!-- formulario-->
     </div>

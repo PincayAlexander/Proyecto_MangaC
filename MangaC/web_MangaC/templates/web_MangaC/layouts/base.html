@@ -19,27 +19,27 @@
     <!-- Menú Principal -->
     <header>
         <nav class="navbar">
-            <ul class="navbar-links">
-                <li class="navbar-links__item"><a href="{% url 'home' %}">
+            <ul class="navbar__links">
+                <li class="navbar__links--item"><a href="{% url 'home' %}">
                     <i class="fa-solid fa-house"></i><p>Inicio</p></a></li>
-                <li class="navbar-links__item"><a href="{% url 'about' %}">
+                <li class="navbar__links--item"><a href="{% url 'about' %}">
                     <i class="fa-solid fa-circle-info"></i><p>Acerca de</p></a></li>
             </ul>
-            <div class="navbar-logo">
+            <div class="navbar__logo">
                 <img src="{% static 'web_MangaC/image/logo.ico' %}" alt="logo">
                 <h1>MangaC</h1>
             </div>
-            <ul class="navbar-links">
+            <ul class="navbar__links">
                 {% if request.user.is_authenticated %}
                 <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
-                    <button type="submit" class="navbar-links__logout-button">
+                    <button type="submit" class="navbar__button--logout">
                         <i class="fa-solid fa-right-from-bracket"></i><p>Cerrar Sesión</p>
                     </button>
                 </form>
                 {% else %}
                 <li>
-                    <a class="navbar-links__login-button" href="{% url 'login' %}"><i class="fa-solid fa-user"></i><p>Identificarse</p></a>
+                    <a class="navbar__button--login" href="{% url 'login' %}"><i class="fa-solid fa-user"></i><p>Identificarse</p></a>
                 </li>
                 {% endif %}
             </ul>

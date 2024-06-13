@@ -16,7 +16,7 @@
     box-shadow: 0 4px 10px 4px rgba(19, 50, 47, .3);
 }
 
-.form-title {
+.form__title {
     font-family: 'Oswald', sans-serif;
     font-style: normal;
     font-optical-sizing: auto;
@@ -45,14 +45,14 @@
     gap: .6rem
 }
 
-.login-error {
+.login__error {
     margin: .5rem 0 0 0;
     color: rgb(255, 188, 188);
     text-align: center;
     font-size: 11px;
 }
 
-.login-urls {
+.login__urls {
     display: flex;
     width: 100%;
     align-items: center;
@@ -61,7 +61,7 @@
     margin-top: 1.5rem;
 }
 
-.login-urls a {
+.login__urls a {
     width: 48%;
     text-align: center;
     text-decoration: none;
@@ -81,7 +81,7 @@
     height: 90vh;
 }
 
-.signup-container {
+.signup__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -92,8 +92,8 @@
     }
 }
 
-.login-campo,
-.signup-campo {
+.login__campo,
+.signup__campo {
     background: transparent;
     color: rgb(255, 255, 255);
     border: 0;
@@ -106,8 +106,8 @@
         color: rgb(0, 0, 0);
     }
 }
-.login-campo::placeholder,
-.signup-campo::placeholder {
+.login__campo::placeholder,
+.signup__campo::placeholder {
     color: rgb(255, 255, 255);
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
@@ -115,22 +115,22 @@
     padding-left: 0.2rem;;
 }
 
-.login-campo:focus::placeholder,
-.signup-campo:focus::placeholder {
+.login__campo:focus::placeholder,
+.signup__campo:focus::placeholder {
     color: rgb(102, 108, 120);
     padding-left: 0.2rem;;
     font-weight: normal;
 }
-.login-campo {
+.login__campo {
     width: calc(100% - 4rem);
 }
 
-.signup-campo {
+.signup__campo {
     width: calc(100% - 5rem);
 }
 
-.login-button,
-.signup-button {
+.login__button,
+.signup__button {
     border: 1px solid white;
     background: transparent;
     color: white;

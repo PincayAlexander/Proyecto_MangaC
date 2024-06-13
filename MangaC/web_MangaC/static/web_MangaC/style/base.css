@@ -40,7 +40,7 @@ header {
     padding: 0 20px;
 }
 
-.navbar-links {
+.navbar__links {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -50,7 +50,7 @@ header {
 
 }
 
-.navbar-links__item a {
+.navbar__links--item a {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -61,23 +61,23 @@ header {
     font-weight: bold;
     transition: all 0.4s ease 0s;
 }
-.navbar-links__item a p {
+.navbar__links--item a p {
     margin: 0;
 }
-.navbar-links__item a:hover {
+.navbar__links--item a:hover {
     color: rgba(255, 255, 255);
     font-weight: 800;
 }
 
-.navbar-logo {
+.navbar__logo {
     display: flex;
     align-items: center;
 }
-.navbar-logo img {
+.navbar__logo img {
     height: 8.5vh;
     width: auto;
 }
-.navbar-logo h1 {
+.navbar__logo h1 {
     font-family: "Lilita One", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -85,9 +85,8 @@ header {
     margin: 1rem .5rem;
 }
 
-
-.navbar-links__logout-button, 
-.navbar-links__login-button {
+.navbar__button--logout, 
+.navbar__button--login {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,17 +100,15 @@ header {
     font-weight: bold;
     transition: all 0.4s border 0.2s ease 0s;
 }
-.navbar-links__logout-button p, 
-.navbar-links__login-button p {
+.navbar__button--logout p, 
+.navbar__button--login p {
     margin: 0;
 }
-
-.navbar-links__login-button {
+.navbar__button--login {
     text-decoration: none;
 }
-
-.navbar-links__logout-button:hover,
-.navbar-links__login-button:hover {
+.navbar__button--logout:hover,
+.navbar__button--login:hover {
     background-color: rgba(255, 255, 255);
     color: rgb(29, 26, 48);
     border: 2px solid rgb(29, 26, 48);

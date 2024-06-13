@@ -13,9 +13,13 @@
     font-size: 28px;
     font-weight: bold;
     display: flex;
-    align-items: first baseline;
+    height: 8vh;
+    margin: 0;
+    align-items: center;
 }
-
+.home__title p {
+    margin: 0
+}
 .home__title i {
     margin: 0 .6rem;
     font-size: 2rem;
@@ -30,7 +34,6 @@
     display: flex;
     align-items: center;
 }
-
 .section__title::before,
 .section__title::after {
     content: '';
