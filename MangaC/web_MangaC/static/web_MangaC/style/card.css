@@ -1,11 +1,9 @@
-.card-container {
+.card__container {
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
-    /*    background-color: rgb(10, 58, 58);
-*/
 }
 
 .card {
@@ -19,7 +17,7 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.card-content {
+.card__content {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -27,8 +25,7 @@
     min-height: 48.5vh;
     width: 100%;
 }
-
-.card-title {
+.card__title {
     width: 90%;
     padding: .4rem 0;
     margin: .5rem 0;
@@ -37,8 +34,7 @@
     text-align: center;
     background-color: rgb(210, 231, 231);
 }
-
-.card-image {
+.card__image {
     margin: 0;
     margin: 0.5rem 0;
     width: 10.5rem;
@@ -48,7 +44,7 @@
     transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);
 }
 
-.card-footer {
+.card__footer {
     margin: 0;
     width: 100%;
     display: flex;
@@ -56,19 +52,19 @@
     justify-content: space-evenly;
     align-items: center;
 }
-.card-text {
+.card__text {
     text-align: center;
     margin: 0.1rem;
     font-size: 12px;
 }
-.card-footer .card-text:first-child {
+.card__footer .card__text:first-child {
     width: 40%;
 }
-.card-footer .card-text:nth-child(2) {
+.card__footer .card__text:nth-child(2) {
     width: 60%;
 }
 
-.card-link {
+.card__link {
     text-decoration: none;
     color: inherit;
     margin: 10px;

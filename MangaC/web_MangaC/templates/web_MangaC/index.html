@@ -8,26 +8,34 @@
 
 {% block content %}
 <div class="home">
-    <h1 class="home-title">Bienvenido 🐉</h1><br>
+    <h1 class="home__title">
+        <p>Bienvenido</p>
+        {% if request.user.is_authenticated %}
+        <p>, <i class="fa-solid fa-jedi"></i>{{ request.user.username }}</p>
+        {% endif %}
+        <i class="fa-solid fa-jedi"></i>
+    </h1>
+        
+    <br>
+    <!-- Sección Mangas Disponibles -->
     <section>
-        <h2 class="home-subtitle">Mangas disponibles </h2>
-        <div class="card-container">
+        <h2 class="section__title">Mangas disponibles </h2>
+        <div class="card__container">
             {% for manga in mangas %}
-            <a href="{% url 'chapter' %}" class="card-link">
-                <div class="card">
-                    <div class="card-content">
-                        <h3 class="card-title">{{ manga.nombre }}</h3>
-                        <img src="{{ manga.portada.url }}" alt="Portada de {{ manga.nombre }}" class="card-image">
+            <a href="{% url 'chapter' manga.nombre %}" class="card card__link">
+                    <div class="card__content">
+                        <h3 class="card__title">{{ manga.nombre }}</h3>
+                        <img src="{{ manga.portada.url }}" alt="Portada de {{ manga.nombre }}" class="card__image">
                     </div>
-                    <div class="card-footer">
-                        <p class="card-text"><b>Genero:</b> {{ manga.genero_principal.nombre }}</p>
-                        <p class="card-text"><b>Autor:</b> {{ manga.autor.nombre }} {{ manga.autor.apellido }}</p>
+                    <div class="card__footer">
+                        <p class="card__text"><b>Genero:</b> {{ manga.genero_principal.nombre }}</p>
+                        <p class="card__text"><b>Autor:</b> {{ manga.autor.nombre }} {{ manga.autor.apellido }}</p>
                     </div>
-                </div>
             </a>
+            {% empty %}
+            <p>No hay mangas disponibles actualmente. ¡Vuelve pronto para ver las últimas novedades!</p>
             {% endfor %}
         </div>
-    
     </section>
 </div>
 {% endblock %}

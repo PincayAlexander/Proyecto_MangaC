@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from .models import *
 from .forms import *
 from django.contrib.auth.decorators import login_required
@@ -35,10 +35,10 @@ def about_view (request):
 
 # Capítulos de manga
 @login_required
-def manga_capitulos_view (request):
-    capitulos = tabla_capitulos.objects.all()
-    mangas = tabla_mangas.objects.all()
+def chapter_view (request, mangaNombre):
+    manga = get_object_or_404(tabla_mangas, nombre=mangaNombre)
+    capitulos = tabla_capitulos.objects.filter(manga=manga.id)
     return render(request,"web_MangaC/chapter.html", {
+        'manga': manga, 
         'capitulos': capitulos,
-        'mangas': mangas, 
     })
