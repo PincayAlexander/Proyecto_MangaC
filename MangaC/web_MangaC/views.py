@@ -29,7 +29,7 @@ def signup_view (request):
         'form': signup_form()
     })
 
-# Acerca de"
+# Acerca de
 def about_view (request):
     return render(request, "web_MangaC/about.html")
 
