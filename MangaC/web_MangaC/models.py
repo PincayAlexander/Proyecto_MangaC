@@ -1,7 +1,8 @@
 import os
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
+import datetime
+from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 
 #Tabla "autores"
@@ -38,7 +39,10 @@ class tabla_mangas(models.Model):
     genero_principal = models.ForeignKey(tabla_generos, null=True, on_delete=models.CASCADE, verbose_name='Genero Principal')
     subgenero = models.ManyToManyField(tabla_generos, blank=True, related_name='sub_mangas_set', verbose_name='Subgenero')
     autor = models.ForeignKey(tabla_autores, on_delete=models.CASCADE, null=True)
-    fech_publicacion = models.DateField(auto_now_add=True, verbose_name='Fecha de Publicación')
+    fech_publicacion = models.PositiveIntegerField(
+        validators=[MinValueValidator(1900), MaxValueValidator(datetime.date.today().year)],
+        verbose_name='Fecha de Publicación'
+    )
     estado = models.CharField(max_length=10, choices=OPCIONES_ESTADO)
     portada = models.ImageField(upload_to='portadas/', null=True)
     descripcion = models.TextField(null=True)
@@ -58,7 +62,7 @@ def obtener_ruta_subida(instance, filename):
 #Tabla "capitulos"
 class tabla_capitulos(models.Model):
     manga = models.ForeignKey(tabla_mangas, on_delete=models.CASCADE)
-    capitulo = models.FileField(upload_to=obtener_ruta_subida, null=True)
+    capitulo = models.FileField(upload_to=obtener_ruta_subida, null=True, blank=True)
     num_capitulo = models.PositiveSmallIntegerField(verbose_name='Número de Capitulo')
     titulo = models.CharField(max_length=100, null=True)
     Fech_upload = models.DateField(auto_now=True, verbose_name='Fecha de Publicación')

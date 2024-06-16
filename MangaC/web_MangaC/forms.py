@@ -1,7 +1,8 @@
+from django.contrib.auth.forms import AuthenticationForm
 from django import forms
 
 # Formulario de inicio de sesión
-class login_form(forms.Form):
+class login_form(AuthenticationForm):
     username = forms.CharField(
         label=None, 
         widget=forms.TextInput(attrs={

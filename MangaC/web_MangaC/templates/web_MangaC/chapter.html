@@ -2,28 +2,63 @@
 {% load static %}
 
 {% block headAdd %}
-<link rel="stylesheet" href="{% static 'web_MangaC/style/capitulos.css' %}">
+<link rel="stylesheet" href="{% static 'web_MangaC/style/chapter.css' %}">
+<script src="{% static 'web_MangaC/js/script.js' %}"></script>
 {% endblock %}
 
 {% block content %}
 
 <body>
     <div class="cap__container">
-        <H1>Capitulos </H1>
-        <br>
-        <h3><b>{{ manga.nombre }}</b></h3>
+        <div class="manga__background">
+            <div class="manga__header">
+                <div class="manga__portada">
+                    <h2>MANGA</h2>
+                    <div class="manga__portada--img">
+                        <img src="{{ manga.portada.url }}" alt="Portada de {{ manga.nombre }}">
+                        <span>{{ manga.genero_principal }}</span>
+                    </div>
+                </div>
+                <div class="manga__info">
+                    <h1><b>{{ manga.nombre }}</b>
+                        <span>({{ manga.fech_publicacion }})</span>
+                    </h1>
+                    <p class="manga__info--descripcion">{{ manga.descripcion }}</p>
+                    <h5 class="manga__subtitle">Estado:</h5>
+                    <p class="manga__info--contendido">{{ manga.estado }}</p>
+                    <div class="manga__container--genero">
+                        <h5 class="manga__subtitle">Géneros:</h5>
+                        <ul class="manga__generos">
+                            {% for sub in manga.subgenero.all %}
+                            <li>{{ sub.nombre }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <h5 class="manga__subtitle"> Autor:</h5>
+                    <p class="manga__info--contendido">{{ manga.autor.nombre }} {{ manga.autor.apellido }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="manga__chapter">
+            <h2>CAPITULOS</h2>
+            <ul class="manga__chapter--item">{% for cap in capitulos %}
+                <li><p><i class="fa-solid fa-eye-slash"></i>
+                        Capitulo #{{ cap.num_capitulo }}
+                        {% if cap.titulo %}
+                        - {{ cap.titulo }}
+                        {% endif %}
+                    </p>
+                    {% if cap.capitulo %}
+                    <button class="manga__button" type="button" onclick="redirectToPDF(this, '{{ cap.capitulo.url }}', this.closest('li'))">
+                        <i class="fa-solid fa-file-pdf"></i>Ver PDF</button>
+                    {% else %}
+                    <span>No hay PDF disponible para este capítulo.</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
 
-        <ul>
-            {% for cap in capitulos %}
-            <li>Capitulo #{{ cap.num_capitulo }}
-                {% if cap.titulo %}
-                - {{ cap.titulo }}
-                {% endif %}
-                <!--<a href="{{ capitulo.pdf.url }}" target="_blank">Ver PDF</a>
-                <p>No hay PDF disponible para este capítulo.</p>-->
-            </li>
-            {% endfor %}
-        </ul>
+        </div>
     </div>
 </body>
 {% endblock %}
