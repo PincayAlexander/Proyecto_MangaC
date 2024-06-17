@@ -64,7 +64,7 @@ class tabla_capitulos(models.Model):
     manga = models.ForeignKey(tabla_mangas, on_delete=models.CASCADE)
     capitulo = models.FileField(upload_to=obtener_ruta_subida, null=True, blank=True)
     num_capitulo = models.PositiveSmallIntegerField(verbose_name='Número de Capitulo')
-    titulo = models.CharField(max_length=100, null=True)
+    titulo = models.CharField(max_length=100, null=True, blank=True)
     Fech_upload = models.DateField(auto_now=True, verbose_name='Fecha de Publicación')
     class Meta:
         verbose_name = 'Capítulo'
