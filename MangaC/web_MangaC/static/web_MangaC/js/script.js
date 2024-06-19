@@ -8,8 +8,9 @@ function redirectToPDF(button, url, listItem) {
 
 function vistoPDF(listItem) {
     let icon = listItem.querySelector('.fa-eye-slash');
-    icon.classList.remove('fa-eye-slash');
-    console.log('deberia servir')
-    icon.classList.add('fa-eye');
-    icon.style.color = 'blue';
+    if (icon != null) {
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+        icon.style.color = 'blue';
+    }
 }

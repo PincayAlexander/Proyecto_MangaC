@@ -31,6 +31,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1', # Local
     '143.198.231.154', # DigitalOcean
     'AlexPincay.pythonanywhere.com' # Python AnyWhere
+    'mangastar.xyz', # Dominio del sitio web
+    'www.mangastar.xyz'
 ]  
 
 # Application definition

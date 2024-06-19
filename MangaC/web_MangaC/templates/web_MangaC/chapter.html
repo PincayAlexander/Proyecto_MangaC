@@ -48,8 +48,9 @@
                         - {{ cap.titulo }}
                         {% endif %}
                     </p>
-                    {% if cap.capitulo %}
-                    <button class="manga__button" type="button" onclick="redirectToPDF(this, '{{ cap.capitulo.url }}', this.closest('li'))">
+                    {# if cap.capitulo #}
+                    {% if cap.url_capitulo %}
+                    <button class="manga__button" type="button" onclick="redirectToPDF(this, '{{ cap.url_capitulo }}', this.closest('li'))"> {# cap.capitulo.url #}
                         <i class="fa-solid fa-file-pdf"></i>Ver PDF</button>
                     {% else %}
                     <span>No hay PDF disponible para este capítulo.</span>
