@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost', 
     '127.0.0.1', # Local
-    '143.198.231.154', # DigitalOcean
+    '143.198.231.154', # IP de DigitalOcean
     'AlexPincay.pythonanywhere.com' # Python AnyWhere
     'mangastar.xyz', # Dominio del sitio web
     'www.mangastar.xyz'

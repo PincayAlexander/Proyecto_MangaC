@@ -7,23 +7,25 @@
 .home__title {
     font-family: 'Oswald', sans-serif;
     font-style: normal;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    margin: 10px 0;
+    font-weight: 500;
     font-size: 28px;
-    font-weight: bold;
     display: flex;
     height: 8vh;
-    margin: 0;
     align-items: center;
+    margin: 0 15px;
 }
-.home__title p {
-    margin: 0
+.home__title span {
+    margin: 0 8px;
+    padding: 0;
+    text-decoration: underline;
+    color: rgb(33, 58, 75);
 }
-.home__title i {
-    margin: 0 .6rem;
-    font-size: 2rem;
-    color: rgb(155, 155, 155);
+.home__title--img {
+    margin: -8px;
+    width: 55px;
+    padding: 0;
+    background-color: transparent;
+    height: auto;
 }
 
 .section__title{

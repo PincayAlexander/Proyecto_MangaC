@@ -8,13 +8,15 @@
 
 {% block content %}
 <div class="home">
-    <h1 class="home__title">
+    <div class="home__title">
         <p>Bienvenido</p>
         {% if request.user.is_authenticated %}
-        <p>, <i class="fa-solid fa-jedi"></i>{{ request.user.username }}</p>
+        <span>" {{ request.user.username }} "</span>
         {% endif %}
-        <i class="fa-solid fa-jedi"></i>
-    </h1>
+        <p>a MangaC</p>
+        <img src="{% static 'web_MangaC/image/logo.ico' %}" class="home__title--img">
+        <p>Star</p>
+    </div>
         
     <br>
     <!-- Sección Mangas Disponibles -->
