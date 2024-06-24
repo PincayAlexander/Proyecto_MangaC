@@ -9,11 +9,11 @@
 {% block content %}
 <div class="home">
     <div class="home__title">
-        <p>Bienvenido</p>
+        <p>Bienvenido 
         {% if request.user.is_authenticated %}
         <span>" {{ request.user.username }} "</span>
         {% endif %}
-        <p>a MangaC</p>
+         a MangaC</p>
         <img src="{% static 'web_MangaC/image/logo.ico' %}" class="home__title--img">
         <p>Star</p>
     </div>
