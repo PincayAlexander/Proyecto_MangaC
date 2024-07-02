@@ -56,6 +56,8 @@
                     <span>No hay PDF disponible para este capítulo.</span>
                     {% endif %}
                 </li>
+                {% empty %}
+                <p>No hay capitulos disponibles actualmente. ¡Vuelve en otro momento para más novedades!</p>    
                 {% endfor %}
             </ul>
 
