@@ -1,10 +1,13 @@
-# MangaC
+# MangaC Star
 
-Autores:
+Integrantes Paralelo: "A":
   * Pincay Baque John Alexander
   * Zambrano Bazurto Josehp Brayan
   * Zambrano Mendoza Nelson Gustavo
 
-Paralelo: "A"
+Integrantes Paralelo: "B":
+  * Palma Laz Ariel Leonardo
+  * Vergara Villacís Jhimy Andres
+  * Zambrano Loor Héctor Jesús
 
 Materia: DESARROLLO DE SISTEMAS DE INFORMACION
