@@ -66,7 +66,7 @@
 .card__link {
     text-decoration: none;
     color: inherit;
-    margin: 10px;
+    margin: 9px;
     &:hover {
         transform: scale(1.05);
         .card__image {
