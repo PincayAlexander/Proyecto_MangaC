@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
-from .models import *
-from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout
-
+from .models import *
+from .forms import *
 
 # Página principal
 def home_view (request):
