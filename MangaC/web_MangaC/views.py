@@ -4,12 +4,12 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout
 from .models import *
 from .forms import *
-from django.conf.urls import handler404, handler500
 from django.shortcuts import render
 
 
 # Página principal
 def home_view (request):
+    # raise Exception("Forzando un error 500 para probar la vista de error")
     mangas = tabla_mangas.objects.all()
     return render(request, "web_MangaC/index.html", {
         'mangas': mangas,
@@ -35,10 +35,10 @@ def signup_view (request):
 def about_view (request):
     return render(request, "web_MangaC/about.html")
 
-def error_404(request, exception):
+def error_404_view(request, exception):
     return render(request, '404.html', status=404)
 
-def error_500(request):
+def error_500_view(request):
     return render(request, '500.html', status=500)
 
 # Capítulos de manga
