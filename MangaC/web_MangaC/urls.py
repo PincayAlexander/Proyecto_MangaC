@@ -1,6 +1,11 @@
 from django.urls import path
 from . import views
 from .views import CustomLoginView
+from django.conf.urls import handler404, handler500
+
+handler404 = 'web_MangaC.views.error_404_view'
+handler500 = 'web_MangaC.views.error_500_view'
+
 
 urlpatterns = [
     path('', views.home_view, name="home"),
