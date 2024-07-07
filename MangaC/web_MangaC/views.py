@@ -4,6 +4,9 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import logout
 from .models import *
 from .forms import *
+from django.conf.urls import handler404, handler500
+from django.shortcuts import render
+
 
 # Página principal
 def home_view (request):
@@ -31,6 +34,12 @@ def signup_view (request):
 # Acerca de
 def about_view (request):
     return render(request, "web_MangaC/about.html")
+
+def error_404(request, exception):
+    return render(request, '404.html', status=404)
+
+def error_500(request):
+    return render(request, '500.html', status=500)
 
 # Capítulos de manga
 @login_required
