@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import logout
 from .models import *
 from .forms import *
@@ -21,9 +21,8 @@ class CustomLoginView(LoginView):
     AuthenticationForm = login_form
 
 # Cerrar sesión
-def logout_view(request):
-    logout(request)
-    return redirect('/home')
+class CustomLogoutView(LogoutView):
+    next_page = 'home'
 
 # Registro de usuarios
 def signup_view (request):
