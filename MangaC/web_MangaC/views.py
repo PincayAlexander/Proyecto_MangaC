@@ -18,7 +18,7 @@ def home_view (request):
 # Inicio de sesión
 class CustomLoginView(LoginView):
     template_name = "registration/login.html"
-    form_class = login_form
+    AuthenticationForm = login_form
 
 # Cerrar sesión
 def logout_view(request):
